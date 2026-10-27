@@ -1,0 +1,27 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root { color-scheme: dark; }
+body {
+  background:
+    radial-gradient(900px 400px at 85% -10%, rgba(34,211,238,.07), transparent 60%),
+    radial-gradient(700px 400px at -5% 10%, rgba(251,191,36,.04), transparent 60%),
+    #06080c;
+  min-height: 100vh;
+}
+@layer components {
+  .card { @apply rounded-xl border border-ink-700 bg-ink-900/80 backdrop-blur; }
+  .label { @apply text-[10px] font-semibold uppercase tracking-[0.14em] text-slate-500; }
+  .chip { @apply inline-flex items-center gap-1 rounded-md border px-1.5 py-0.5 font-mono text-[10px] leading-4; }
+  .btn { @apply inline-flex items-center justify-center gap-2 rounded-lg px-4 py-2 text-sm font-medium transition disabled:cursor-not-allowed disabled:opacity-50; }
+}
+/* React Flow dark tweaks */
+.react-flow__attribution { display: none; }
+.react-flow__controls button { background:#0e121a; border-color:#1b2230; fill:#94a3b8; }
+.react-flow__controls button:hover { background:#131823; }
+.react-flow__minimap { background:#0a0d13 !important; border:1px solid #1b2230; border-radius:8px; }
+::-webkit-scrollbar { width: 8px; height: 8px; }
+::-webkit-scrollbar-thumb { background:#263044; border-radius: 8px; }
+@keyframes scan { 0% { transform: translateX(-100%);} 100% { transform: translateX(300%);} }
+.scanbar { animation: scan 1.4s linear infinite; }
